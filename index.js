@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 const Message = require('./models/Message');
@@ -25,10 +24,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({
-  credentials: true,
-  origin: "https://react-chat-qnp7v990r-jhonshua.vercel.app/",
-}));
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
