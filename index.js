@@ -111,7 +111,7 @@ app.post('/register', async (req, res) => {
     res.status(500).json('error');
   }
 });
-
+console.log('servidor levantado')
 const server = app.listen(4040);
 
 const wss = new ws.WebSocketServer({ server });
