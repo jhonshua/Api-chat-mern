@@ -24,10 +24,7 @@ const app = express();
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-  credentials: true,
-  origin: process.env.CLIENT_URL,
-}));
+app.use(cors());
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
@@ -115,7 +112,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
-const server = app.listen(4000);
+const server = app.listen(4040);
 
 const wss = new ws.WebSocketServer({ server });
 wss.on('connection', (connection, req) => {
