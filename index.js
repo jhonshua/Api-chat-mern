@@ -27,7 +27,7 @@ app.use(cookieParser());
 
 app.use(cors({
   credentials: true,
-  origin: "https://react-chat-gilt.vercel.app/",
+  origin: "https://react-chat-qnp7v990r-jhonshua.vercel.app/",
 }));
 
 async function getUserDataFromRequest(req) {
