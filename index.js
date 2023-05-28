@@ -12,12 +12,12 @@ const fs = require('fs');
 
 dotenv.config();
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGO_URL
+mongoose.connect("mongodb://mongo:inLA7UEXEoa6sA9rkYiz@containers-us-west-196.railway.app:7128/"
   , (err) => {
     if (err) throw err;
   });
 
-const jwtSecret = process.env.JWT_SECRET;
+const jwtSecret = "1e9fb1d249ab427fc28652bd973c47c0";
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const app = express();
@@ -111,8 +111,8 @@ app.post('/register', async (req, res) => {
     res.status(500).json('error');
   }
 });
-console.log('servidor levantado')
-const server = app.listen(4040);
+console.log('servidor up: port 4000')
+const server = app.listen(4000);
 
 const wss = new ws.WebSocketServer({ server });
 wss.on('connection', (connection, req) => {
